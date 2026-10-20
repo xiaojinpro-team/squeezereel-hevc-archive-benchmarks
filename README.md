@@ -4,7 +4,7 @@ These benchmarks were run by the [SqueezeReel](https://squeezereel.com) team whi
 
 Reproducible benchmarks for archiving **ProRes 4444** camera masters as H.265/HEVC. Sources: ARRI ProRes 4444 footage from a studio green-screen project (3840x2160, 25 fps, 12-bit 4:4:4, about 880 Mbps), plus ProRes 4444 clips with a real alpha channel.
 
-- Web version with the same tables: https://squeezereel.com/en/benchmarks/hevc-444-vs-422-prores-4444-green-screen (中文: https://squeezereel.com/zh/benchmarks/hevc-444-vs-422-prores-4444-green-screen)
+- Web version with the same tables: [English](https://squeezereel.com/en/benchmarks/hevc-444-vs-422-prores-4444-green-screen) ([中文](https://squeezereel.com/zh/benchmarks/hevc-444-vs-422-prores-4444-green-screen))
 - Tool used for the archive lanes: [SqueezeReel](https://squeezereel.com) (smartenc 0.2.24 / 0.2.25) plus plain ffmpeg 9.0.2 and x265 4.3 (8/10/12-bit)
 - No frames or crops from the footage are published here (client material). All numbers are measurements against the source.
 
@@ -122,7 +122,7 @@ Raw numbers per round are in `results/*.csv`. The scripts were smoke-tested on a
 
 ## Try it
 
-Run the same lanes on your own footage with SqueezeReel (web upload, no install: https://squeezereel.com/en/archive) or with smartenc (CLI, macOS). Pricing: https://squeezereel.com/en/pricing
+Run the same lanes on your own footage with SqueezeReel ([web upload, no install](https://squeezereel.com/en/archive)) or with smartenc (CLI, macOS). [Pricing](https://squeezereel.com/en/pricing)
 
 ---
 
@@ -130,7 +130,7 @@ Run the same lanes on your own footage with SqueezeReel (web upload, no install:
 
 用 H.265/HEVC 归档 **ProRes 4444** 摄影机母版的可复现基准测试。素材:某棚拍绿幕项目的 ARRI ProRes 4444(3840x2160、25 fps、12-bit 4:4:4,约 880 Mbps),以及带真实 alpha 的 ProRes 4444 片段。
 
-- 网页版(同样的表):https://squeezereel.com/zh/benchmarks/hevc-444-vs-422-prores-4444-green-screen(English: https://squeezereel.com/en/benchmarks/hevc-444-vs-422-prores-4444-green-screen)
+- 网页版(同样的表):[中文](https://squeezereel.com/zh/benchmarks/hevc-444-vs-422-prores-4444-green-screen)(English: [link](https://squeezereel.com/en/benchmarks/hevc-444-vs-422-prores-4444-green-screen))
 - 归档档位使用的工具:[轻舟 SqueezeReel](https://squeezereel.com)(smartenc 0.2.24 / 0.2.25),以及 ffmpeg 9.0.2 与 x265 4.3
 - 本仓库不含素材画面或裁切图(客户素材);所有数字都是相对源文件的实测值。
 
