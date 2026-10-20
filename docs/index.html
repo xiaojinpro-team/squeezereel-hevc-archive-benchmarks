@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HEVC archive benchmarks for ProRes 4444: 4:4:4 vs 4:2:2, x265, 12-bit, HEVC with alpha</title>
+<meta name="description" content="Measured results for archiving ProRes 4444 as H.265: x265 4:4:4 vs VideoToolbox 4:2:2, x265 presets, 12-bit, and HEVC with alpha on macOS.">
+<link rel="canonical" href="https://squeezereel.com/en/benchmarks/hevc-444-vs-422-prores-4444-green-screen">
+<style>body{font-family:system-ui,sans-serif;max-width:46rem;margin:2rem auto;padding:0 1rem;line-height:1.55;color:#1a1a1a}table{border-collapse:collapse;width:100%;font-size:.9rem}th,td{border:1px solid #ccc;padding:.35rem .5rem;text-align:left}th{background:#f3f3f3}a{color:#0b5cd5}</style>
+</head>
+<body>
+<h1>HEVC archive benchmarks for ProRes 4444</h1>
+<p>Run by the <a href="https://squeezereel.com/">SqueezeReel</a> team while building its archive lanes. Full tables, method and scripts: <a href="https://github.com/xiaojinpro-team/squeezereel-hevc-archive-benchmarks">GitHub repository</a>. The same results on the web: <a href="https://squeezereel.com/en/benchmarks/hevc-444-vs-422-prores-4444-green-screen">English</a>, <a href="https://squeezereel.com/zh/benchmarks/hevc-444-vs-422-prores-4444-green-screen">中文</a>. Product: <a href="https://squeezereel.com/en/archive">archive</a>.</p>
+<p>Sources: ARRI ProRes 4444 footage from a studio green-screen project (3840x2160, 25 fps, 12-bit 4:4:4, about 880 Mbps) and ProRes 4444 clips with a real alpha channel. Tools: ffmpeg 9.0.2, x265 4.3, VideoToolbox.</p>
+<h2>TL;DR</h2>
+<ol>
+<li><strong>4:4:4 chroma gave no measurable chroma benefit.</strong> Chroma PSNR/SSIM of x265 4:4:4 and VideoToolbox 4:2:2 are within 0.25 dB, even on a saturated red backdrop. 4:4:4 wins on luma (+0.9 to +1.5 dB PSNR, VMAF about +1.2) and keying edges (36% to 47% fewer matte edge mismatches), at 7 to 14 times the file size.</li>
+<li><strong>x265 medium matches slower on matte quality and is about 10 times faster</strong> (3 to 3.8 fps against 0.35 fps on an M4 Mac mini), at about 60% of the size. VMAF minimum is 0.4 to 0.7 lower.</li>
+<li><strong>12-bit (main444-12) is not worth making the default:</strong> 26% to 32% more bytes, 5% to 27% slower, +0.15 dB luma PSNR.</li>
+<li><strong>HEVC with alpha works on macOS.</strong> VideoToolbox with alpha_quality 1.0 kept the alpha plane bit-exact on both test clips at about 12 times compression. Apple's avconvert preset reaches about 22 times, but soft-edge alpha deviates by up to 37 to 42/255.</li>
+<li><strong>libx265 cannot write an alpha layer</strong> in the x265 4.3 build tested.</li>
+</ol>
+<h2>Summary (preset slower, 20 s windows)</h2>
+<table>
+<tr><th>Sample / lane</th><th>Speed</th><th>Size</th><th>VMAF mean / min</th><th>Matte edge mismatch</th></tr>
+<tr><td>S1 VideoToolbox 4:2:2</td><td>41 fps</td><td>3.83 MB</td><td>95.1 / 93.5</td><td>3.59%</td></tr>
+<tr><td>S1 x265 4:4:4 slower</td><td>0.35 fps</td><td>50.1 MB</td><td>96.3 / 95.3</td><td>2.25%</td></tr>
+<tr><td>S1 x265 4:4:4 medium</td><td>3.44 fps</td><td>29.9 MB</td><td>96.3 / 94.5</td><td>2.24%</td></tr>
+<tr><td>S2 VideoToolbox 4:2:2</td><td>40 fps</td><td>4.59 MB</td><td>95.3 / 93.9</td><td>2.92%</td></tr>
+<tr><td>S2 x265 4:4:4 slower</td><td>0.32 fps</td><td>65.1 MB</td><td>96.4 / 95.6</td><td>1.88%</td></tr>
+<tr><td>S2 x265 4:4:4 medium</td><td>2.96 fps</td><td>40.1 MB</td><td>96.4 / 95.1</td><td>1.74%</td></tr>
+</table>
+<h2>Alpha (HEVC with alpha, macOS)</h2>
+<table>
+<tr><th>Lane</th><th>Ratio</th><th>Alpha fidelity</th></tr>
+<tr><td>VideoToolbox alpha_quality 1.0</td><td>about 12x</td><td>bit-exact on both clips</td></tr>
+<tr><td>VideoToolbox alpha_quality 0.9</td><td>about 14x to 15x</td><td>max alpha difference 6 to 7 of 255</td></tr>
+<tr><td>Apple avconvert preset</td><td>about 22x to 24x</td><td>max alpha difference 37 to 42 of 255, soft edges affected</td></tr>
+</table>
+<p>Run the same lanes on your own footage: <a href="https://squeezereel.com/en/archive">SqueezeReel archive</a> (web upload, no install), <a href="https://squeezereel.com/en/pricing">pricing</a>. Method, scripts and per-round CSVs: <a href="https://github.com/xiaojinpro-team/squeezereel-hevc-archive-benchmarks">GitHub</a>.</p>
+</body>
+</html>

@@ -1,4 +1,6 @@
-# HEVC archive benchmarks: 4:4:4 vs 4:2:2, x265 vs VideoToolbox, 12-bit, HEVC with alpha
+# SqueezeReel HEVC archive benchmarks: ProRes 4444 to H.265, 4:4:4 vs 4:2:2, x265 vs VideoToolbox, 12-bit, HEVC with alpha
+
+These benchmarks were run by the [SqueezeReel](https://squeezereel.com) team while building the archive lanes of its smartenc encoder. Read them on the web ([English](https://squeezereel.com/en/benchmarks/hevc-444-vs-422-prores-4444-green-screen), [中文](https://squeezereel.com/zh/benchmarks/hevc-444-vs-422-prores-4444-green-screen)), see the [archive product page](https://squeezereel.com/en/archive), or start from the [home page](https://squeezereel.com/).
 
 Reproducible benchmarks for archiving **ProRes 4444** camera masters as H.265/HEVC. Sources: ARRI ProRes 4444 footage from a studio green-screen project (3840x2160, 25 fps, 12-bit 4:4:4, about 880 Mbps), plus ProRes 4444 clips with a real alpha channel.
 
@@ -117,6 +119,10 @@ swiftc -O scripts/alpha_check.swift -o alpha_check && ./alpha_check out/alpha.mo
 ```
 
 Raw numbers per round are in `results/*.csv`. The scripts were smoke-tested on a synthetic ProRes 4444 clip.
+
+## Try it
+
+Run the same lanes on your own footage with SqueezeReel (web upload, no install: https://squeezereel.com/en/archive) or with smartenc (CLI, macOS). Pricing: https://squeezereel.com/en/pricing
 
 ---
 
