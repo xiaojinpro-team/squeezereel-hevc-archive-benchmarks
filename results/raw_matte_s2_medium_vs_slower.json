@@ -1,0 +1,20 @@
+{
+ "sample": "S2",
+ "key": "0x45877b",
+ "similarity": "0.05",
+ "frames": 50,
+ "B_x265_medium": {
+  "matte_psnr": 48.15064220546304,
+  "mismatch_pct": 0.039468557098765435,
+  "edge_band_mismatch_pct": 1.7386169841919656,
+  "edge_band_px": 178681.82,
+  "soft_alpha_mismatch_pct": 9.37037132164851
+ },
+ "B_x265": {
+  "matte_psnr": 47.887134101235404,
+  "mismatch_pct": 0.04295235339506173,
+  "edge_band_mismatch_pct": 1.8795070984659985,
+  "edge_band_px": 178681.82,
+  "soft_alpha_mismatch_pct": 10.129940453453523
+ }
+}

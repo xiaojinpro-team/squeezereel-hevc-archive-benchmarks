@@ -1,0 +1,27 @@
+{
+ "sample": "S3",
+ "key": "0x839f6e",
+ "similarity": "0.03",
+ "frames": 48,
+ "B_x265_medium": {
+  "matte_psnr": 31.391872269790415,
+  "mismatch_pct": 0.41119987581983025,
+  "edge_band_mismatch_pct": 2.9153922265081382,
+  "edge_band_px": 262947.0833333333,
+  "soft_alpha_mismatch_pct": 0.644682221030828
+ },
+ "B_x265_slow": {
+  "matte_psnr": 31.68954847126619,
+  "mismatch_pct": 0.3329199017811214,
+  "edge_band_mismatch_pct": 2.8194428356455314,
+  "edge_band_px": 262947.0833333333,
+  "soft_alpha_mismatch_pct": 0.5537249813199303
+ },
+ "B_x265": {
+  "matte_psnr": 31.712325620609676,
+  "mismatch_pct": 0.3250212492766204,
+  "edge_band_mismatch_pct": 2.7879307378865197,
+  "edge_band_px": 262947.0833333333,
+  "soft_alpha_mismatch_pct": 0.5381739697482055
+ }
+}

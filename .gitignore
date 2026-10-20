@@ -1,0 +1,6 @@
+.DS_Store
+__pycache__/
+*.mov
+*.mp4
+*.png
+results/raw/

@@ -1,0 +1,7 @@
+sample,lane,encode_fps,size_bytes,ratio_x,rgb_over_grey_psnr_r,rgb_over_grey_psnr_g,rgb_over_grey_psnr_b,rgb_ssim,alpha_psnr_db,alpha_mismatch_gt2_pct_nonempty,alpha_mismatch_gt2_pct_soft,alpha_max_abs_diff
+T1,vt_alpha_quality_0.9,45,10459244,14.0,56.4,60.4,64.3,0.99996,69.2,0.21,1.5,6
+T1,vt_alpha_quality_1.0,44,12615305,11.6,56.5,60.5,64.5,0.99997,lossless,0,0,0
+T1,avconvert_preset,12,6650322,22.1,60.3,60.4,60.1,0.99996,59.4,7.07,37.0,37
+T2,vt_alpha_quality_0.9,41,6667960,14.8,59.2,63.0,66.4,0.99998,71.4,0.23,1.6,7
+T2,vt_alpha_quality_1.0,42,8220920,12.0,59.3,63.1,66.7,0.99998,lossless,0,0,0
+T2,avconvert_preset,14,4187083,23.5,62.9,62.9,62.7,0.99998,61.6,7.77,38.4,42
